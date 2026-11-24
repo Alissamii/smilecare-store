@@ -1,4 +1,4 @@
-
+GOOGLE_SCRIPT_URL:https://script.google.com/macros/s/AKfycbx6Fi6QH8pAKLWXlstBatc9O6X5Byjf99Kfpa7gy8hf91r_1qkrmzskTqNqsm9feDdkXg/exec"",
 const CONFIG = {
   // ใส่ URL ของ Google Apps Script Web App ภายหลัง
   GOOGLE_SCRIPT_URL: "",
