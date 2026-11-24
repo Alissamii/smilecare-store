@@ -1,0 +1,88 @@
+
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#087e75">
+  <title>SmileCare | ดูแลรอยยิ้มทุกวัน</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">✦</span><span>smile<span class="brand-accent">care</span></span></a>
+    <nav><a href="#products">สินค้า</a><a href="#why">เกี่ยวกับเรา</a><button class="nav-admin" id="adminOpen">จัดการร้านค้า</button></nav>
+    <button class="cart-button" id="cartOpen" aria-label="เปิดตะกร้า">ตะกร้า <span id="cartCount">0</span></button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">YOUR DAILY SMILE ROUTINE</span>
+        <h1>รอยยิ้มที่มั่นใจ<br><em>เริ่มต้นได้ทุกวัน</em></h1>
+        <p>เลือกยาสีฟันที่ใช่ เติมความสดชื่นให้ทุกเช้าและก่อนนอน ด้วยผลิตภัณฑ์ดูแลช่องปากที่คัดสรรมาเพื่อคุณ</p>
+        <a class="primary-btn" href="#products">เลือกซื้อสินค้า <span>↗</span></a>
+        <div class="hero-note"><span>✓</span> แพ็กอย่างใส่ใจ · จัดส่งถึงบ้าน</div>
+      </div>
+      <div class="hero-art" aria-label="ภาพประกอบผลิตภัณฑ์ยาสีฟัน">
+        <div class="sun-disc"></div><div class="art-leaf leaf-one"></div><div class="art-leaf leaf-two"></div>
+        <div class="tube tube-back"><div class="tube-cap"></div><b>smilecare</b><small>FRESH MINT</small></div>
+        <div class="tube tube-front"><div class="tube-cap"></div><b>smilecare</b><small>HERBAL CARE</small><span class="tube-wave">✦</span></div>
+        <div class="art-stamp">SMILE<br>EVERY<br>DAY</div>
+      </div>
+    </section>
+
+    <section class="trust-strip"><div>✦ คัดสรรสินค้า</div><div>♡ ดูแลทุกวัน</div><div>⌁ แพ็กอย่างระมัดระวัง</div><div>→ ส่งตรงถึงคุณ</div></section>
+
+    <section class="products-section" id="products">
+      <div class="section-heading"><div><span class="eyebrow">SHOP OUR PICKS</span><h2>เลือกสิ่งที่ดีให้รอยยิ้ม</h2></div><p>2 ไอเท็มดูแลช่องปาก<br>ที่พร้อมให้คุณเลือกแล้ววันนี้</p></div>
+      <div class="product-grid" id="productGrid"></div>
+    </section>
+
+    <section class="why-section" id="why"><div><span class="eyebrow">A LITTLE CARE, A BIG SMILE</span><h2>เริ่มต้นวันดี ๆ<br>ด้วยการดูแลตัวเอง</h2></div><p>SmileCare ตั้งใจทำให้การเลือกซื้อผลิตภัณฑ์ดูแลช่องปากเป็นเรื่องง่าย ตั้งแต่เลือกสินค้า สั่งซื้อ ไปจนถึงการแพ็กและจัดส่ง</p></section>
+  </main>
+
+  <footer><a class="brand" href="#"><span class="brand-mark">✦</span><span>smile<span class="brand-accent">care</span></span></a><span>© 2026 SmileCare Store · Demo storefront</span></footer>
+
+  <div class="overlay" id="cartOverlay"></div>
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR BAG</span><h2>ตะกร้าสินค้า</h2></div><button class="icon-btn" id="cartClose">✕</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-total"><span>ยอดรวม</span><strong id="cartTotal">฿0</strong></div>
+    <button class="primary-btn full" id="checkoutOpen">ดำเนินการสั่งซื้อ <span>→</span></button>
+  </aside>
+
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="modal">
+      <button class="icon-btn modal-close" data-close="checkoutModal">✕</button>
+      <span class="eyebrow">ALMOST THERE</span><h2>ข้อมูลจัดส่ง</h2>
+      <form id="checkoutForm">
+        <label>ชื่อ-นามสกุล<input name="customer" required placeholder="ชื่อผู้รับ"></label>
+        <label>เบอร์โทรศัพท์<input name="phone" required inputmode="tel" placeholder="08X-XXX-XXXX"></label>
+        <label>ที่อยู่จัดส่ง<textarea name="address" required rows="3" placeholder="บ้านเลขที่ ถนน แขวง/ตำบล เขต/อำเภอ จังหวัด รหัสไปรษณีย์"></textarea></label>
+        <label>หมายเหตุ (ถ้ามี)<input name="note" placeholder="เช่น ฝากไว้หน้าบ้าน"></label>
+        <div class="checkout-summary" id="checkoutSummary"></div>
+        <button class="primary-btn full" type="submit">ยืนยันคำสั่งซื้อ <span>→</span></button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="successModal">
+    <div class="modal success-modal"><div class="success-icon">✓</div><span class="eyebrow">ORDER RECEIVED</span><h2>ขอบคุณสำหรับคำสั่งซื้อ!</h2><p>หมายเลขคำสั่งซื้อของคุณ</p><strong id="successOrderId" class="order-number"></strong><p class="muted">ระบบบันทึกคำสั่งซื้อไว้ในเครื่องนี้แล้ว หากเชื่อมต่อ Google Sheets ระบบจะส่งข้อมูลไปยังชีตด้วย</p><button class="primary-btn full" data-close="successModal">กลับไปเลือกซื้อสินค้า</button></div>
+  </div>
+
+  <div class="modal-backdrop admin-backdrop" id="adminModal">
+    <div class="admin-panel">
+      <div class="admin-top"><div><span class="eyebrow">STORE MANAGEMENT</span><h2>จัดการคำสั่งซื้อ</h2></div><button class="icon-btn" data-close="adminModal">✕</button></div>
+      <div class="admin-tabs"><button class="tab active" data-tab="orders">คำสั่งซื้อ</button><button class="tab" data-tab="products">สินค้าและสต็อก</button></div>
+      <div id="adminOrders" class="admin-content"></div>
+      <div id="adminProducts" class="admin-content hidden"></div>
+    </div>
+  </div>
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
